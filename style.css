@@ -152,7 +152,7 @@ nav {
   text-align: center;
   box-shadow: 0 4px 6px var(--shadow);
   transition: transform 0.3s, background-color 0.3s;
-  margin: 0 20px;
+  margin: 0 30px;
 }
 
 .feature-card:hover {
@@ -186,7 +186,7 @@ nav {
   display: none;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   color: var(--text);
 }
