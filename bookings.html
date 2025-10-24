@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./bookings.css" />
     <title>HOSTIFY | Book a Space</title>
   </head>
   <body>
@@ -22,7 +23,85 @@
       <button class="mobile-toggle" id="mobileToggle">☰</button>
     </nav>
 
-    bookings
+    <div class="booking-container">
+      <header class="page-header">
+        <h1>Book Your Table</h1>
+        <h2>Reserve your perfect spot in our luxurious lounge</h2>
+      </header>
+
+      <main>
+        <!-- <div class="container"> -->
+        <form id="bookingForm" class="form">
+          <div class="detail">
+            <label>Full Name *</label>
+            <input
+              type="text"
+              id="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="detail">
+            <label>Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="your.email@example.com"
+              required
+            />
+          </div>
+
+          <div class="detail">
+            <label>Phone Number *</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+1 (555) 000-0000"
+              required
+            />
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label>Date *</label>
+              <input type="date" id="date" required />
+            </div>
+            <div class="col">
+              <label>Time *</label>
+              <input type="time" id="time" required />
+            </div>
+          </div>
+
+          <div class="detail">
+            <label>Number of Guests *</label>
+            <input
+              type="number"
+              id="guests"
+              placeholder="How many guests?"
+              min="1"
+              max="20"
+              required
+            />
+            <small>Maximum 20 guests per booking</small>
+          </div>
+
+          <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+
+        <div class="info-box">
+          <h3>Booking Information</h3>
+          <ul>
+            <li>Bookings can be made up to 30 days in advance</li>
+            <li>You will receive a confirmation email shortly</li>
+            <li>Please arrive 10 minutes before your reservation time</li>
+            <li>For groups larger than 20, please contact us directly</li>
+          </ul>
+        </div>
+        <!-- </div> -->
+      </main>
+    </div>
   </body>
   <script src="./app.js"></script>
+  <script src="./bookings.js"></script>
 </html>
