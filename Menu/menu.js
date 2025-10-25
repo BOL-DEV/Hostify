@@ -303,3 +303,9 @@ checkoutBtn.addEventListener("click", () => {
   openCheckout();
   closeCart();
 });
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("show");
+  }
+});
