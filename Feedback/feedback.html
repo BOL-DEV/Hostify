@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./feedback.css" />
     <title>HOSTIFY | Feedback</title>
   </head>
   <body>
@@ -22,7 +23,44 @@
       <button class="mobile-toggle" id="mobileToggle">☰</button>
     </nav>
 
-    Feedback
+    <main class="feedback">
+      <section class="feedback__section">
+        <h1 class="feedback__title">Share Your Feedback</h1>
+        <p class="feedback__subtitle">Help us improve your experience</p>
+
+        <div class="feedback__form">
+          <h3 class="feedback__label">Rate Your Experience</h3>
+
+          <div class="feedback__rating">
+            <label>Rating</label>
+            <div class="feedback__stars" id="starContainer">
+              <span data-value="1">★</span>
+              <span data-value="2">★</span>
+              <span data-value="3">★</span>
+              <span data-value="4">★</span>
+              <span data-value="5">★</span>
+            </div>
+          </div>
+
+          <div class="feedback__comments">
+            <label>Comments (Optional)</label>
+            <textarea
+              id="commentInput"
+              placeholder="Tell us about your experience..."
+            ></textarea>
+          </div>
+
+          <button id="submitBtn" class="feedback__btn">Submit Feedback</button>
+        </div>
+      </section>
+
+      <section class="feedback__recent">
+        <h2 class="feedback__recent-title">Recent Feedback</h2>
+        <div id="feedbackList" class="feedback__list">
+          <p>No feedback yet. Be the first to share!</p>
+        </div>
+      </section>
+    </main>
   </body>
   <script src="../app.js"></script>
 </html>
