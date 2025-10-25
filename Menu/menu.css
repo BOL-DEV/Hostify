@@ -55,6 +55,21 @@
   color: black;
 }
 
+.menu_filter-all.active {
+  background-color: #f59e0b;
+  color: black;
+}
+
+.menu_filter-food.active {
+  background-color: #f59e0b;
+  color: black;
+}
+
+.menu_filter-drink.active {
+  background-color: #f59e0b;
+  color: black;
+}
+
 .menu-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -75,6 +90,21 @@
 
 .menu_card:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu_card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.95;
+}
+
+.menu_card:hover img {
+  transform: scale(1.05);
+  opacity: 1;
 }
 
 .menu_card h3 {
