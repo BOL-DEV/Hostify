@@ -1,0 +1,123 @@
+.menu_container {
+  min-height: calc(100dvh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom right, #1f2937, #111827);
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.menu-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.menu-header-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.menu-header-text p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.menu_filter {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.menu_filter button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu_filter button:hover {
+  background-color: #f59e0b;
+  color: black;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.menu_card {
+  text-align: left;
+  background-color: #1f2937;
+  border-color: #374151;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.menu_card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu_card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.menu_card p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-weight: lighter;
+  /* color: rgba(255, 255, 255, 0.8); */
+}
+
+.menu_card h4 {
+  /* display: block; */
+  font-weight: 700;
+  color: #f59e0b;
+  font-size: 1.5rem;
+  margin-top: 0.6rem;
+}
+
+.menu_card h5 {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+  width: fit-content;
+  padding: 0.3rem;
+  border-radius: 10px;
+}
+
+.menu_card button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #f59e0b;
+  color: black;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
