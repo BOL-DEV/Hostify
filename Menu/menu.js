@@ -85,7 +85,7 @@ const displayMenu = (item) =>
       <p>${item.title}</p>
       <h5>${item.type}</h5>
       <h4>${item.amount}</h4>
-      <button>Add to cart</button>
+      <button class="add-to-cart" data-name="${item.name}">Add to cart</button>
     </div>
   `);
 
@@ -123,4 +123,183 @@ filterFood.addEventListener("click", () => {
 });
 filterDrink.addEventListener("click", () => {
   filterMenu("Drink");
+});
+
+// === CART SETUP ===
+const cartBtn = document.querySelector(".cart-btn");
+const cartSidebar = document.querySelector(".cart-sidebar");
+const closeCartBtn = document.querySelector(".close-cart");
+const cartOverlay = document.querySelector(".cart-overlay");
+const cartItemsContainer = document.querySelector(".cart-items");
+const cartCount = document.querySelector(".cart-count");
+const cartTotal = document.querySelector(".cart-total");
+
+let cart = [];
+
+cartBtn.addEventListener("click", openCart);
+closeCartBtn.addEventListener("click", closeCart);
+cartOverlay.addEventListener("click", closeCart);
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-to-cart")) {
+    const itemName = e.target.dataset.name;
+    const selectedItem = menu.find((m) => m.name === itemName);
+    addToCart(selectedItem);
+  }
+});
+
+cartItemsContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("increase")) {
+    const name = e.target.dataset.name;
+    cart.find((i) => i.name === name).quantity++;
+    updateCart();
+  }
+
+  if (e.target.classList.contains("decrease")) {
+    const name = e.target.dataset.name;
+    const item = cart.find((i) => i.name === name);
+    if (item.quantity > 1) item.quantity--;
+    else cart = cart.filter((i) => i.name !== name);
+    updateCart();
+  }
+});
+
+// === Cart Functions ===
+function openCart() {
+  cartSidebar.classList.add("active");
+  cartOverlay.classList.add("active");
+}
+
+function closeCart() {
+  cartSidebar.classList.remove("active");
+  cartOverlay.classList.remove("active");
+}
+
+function addToCart(item) {
+  const existing = cart.find((i) => i.name === item.name);
+  if (existing) existing.quantity++;
+  else cart.push({ ...item, quantity: 1 });
+  updateCart();
+}
+
+function updateCart() {
+  cartItemsContainer.innerHTML = "";
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML =
+      '<p style="text-align:center;opacity:0.8;">Your cart is empty.</p>';
+    cartCount.textContent = 0;
+    cartTotal.textContent = "₦0";
+    return;
+  }
+
+  let total = 0;
+  cart.forEach((item) => {
+    const price = parseInt(item.amount.replace(/[₦,]/g, ""));
+    total += price * item.quantity;
+
+    cartItemsContainer.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}" />
+        <div class="cart-item-details">
+          <h4>${item.name}</h4>
+          <p>${item.amount}</p>
+        </div>
+        <div class="cart-quantity">
+          <button class="decrease" data-name="${item.name}">−</button>
+          <span>${item.quantity}</span>
+          <button class="increase" data-name="${item.name}">+</button>
+        </div>
+      </div>
+    `;
+  });
+
+  cartCount.textContent = cart.reduce((acc, i) => acc + i.quantity, 0);
+  cartTotal.textContent = `₦${total.toLocaleString()}`;
+}
+
+// === CHECKOUT SETUP ===
+const checkoutBtn = document.querySelector(".checkout-btn");
+const cartItemsCont = document.querySelector(".cart-items");
+const cartTotalDisplay = document.querySelector(".cart-total");
+const modal = document.querySelector(".checkout-modal");
+const modalItems = document.querySelector(".checkout-items");
+const modalTotal = document.querySelector(".checkout-total");
+const confirmBtn = document.querySelector(".confirm-order");
+
+function openCheckout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty, bruh. Add something first 😒");
+    return;
+  }
+
+  modalItems.innerHTML = "";
+
+  let total = 0;
+  let orderItems = [];
+
+  cart.forEach((item) => {
+    const price = parseInt(item.amount.replace(/[₦,]/g, ""));
+    const subTotal = price * item.quantity;
+    total += subTotal;
+
+    orderItems.push({
+      name: item.name,
+      quantity: item.quantity,
+      price,
+      subtotal: subTotal,
+    });
+
+    modalItems.innerHTML += `
+      <div class="modal-item">
+        <span>${item.name}</span>
+        <span>x${item.quantity}</span>
+        <span>₦${subTotal.toLocaleString()}</span>
+      </div>
+    `;
+  });
+
+  modalTotal.textContent = `₦${total.toLocaleString()}`;
+  modal.classList.add("show");
+
+  const payload = {
+    orderId: `ORD-${Date.now()}`,
+    customer: "Guest",
+    items: orderItems,
+    total,
+    timestamp: new Date().toISOString(),
+  };
+
+  confirmBtn.onclick = async () => {
+    confirmBtn.textContent = "Processing...";
+    confirmBtn.disabled = true;
+
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        alert("Order placed successfully ✅");
+        console.log("✅ Sent to backend:", payload);
+        modal.classList.remove("show");
+        cart = [];
+        updateCart();
+      } else {
+        throw new Error("Failed to send order");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong 😤");
+    } finally {
+      confirmBtn.textContent = "Confirm Order";
+      confirmBtn.disabled = false;
+    }
+  };
+}
+
+checkoutBtn.addEventListener("click", () => {
+  openCheckout();
+  closeCart();
 });
