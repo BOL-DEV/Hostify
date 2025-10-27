@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./staffLogin.css" />
+    <title>HOSTIFY | STAFF-LOGIN</title>
+  </head>
+  <body>
+    <main id="login-screen" class="app-screen">
+      <div class="login-page">
+        <div class="login-card">
+          <header class="login-card_header">
+            <h1 class="login-card_brand">ServeSmart</h1>
+            <h2 class="login-card_title">Staff Login</h2>
+            <p class="login-card_subtitle">Access the staff dashboard</p>
+          </header>
+
+          <form class="login-form">
+            <div class="form-group">
+              <label for="password" class="form-group_label">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-group_input"
+                placeholder="Enter staff password"
+                required
+              />
+              <p class="form-group_hint">Demo password: staff123</p>
+            </div>
+            <button type="submit" class="login-form_button">Login</button>
+          </form>
+
+          <div class="login-card_footer">
+            <a href="../index.html" class="footer_link">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./staffLogin.js"></script>
+  </body>
+</html>

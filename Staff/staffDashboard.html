@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./staffDashboard.css" />
+    <title>HOSTIFY | STAFF DASHBOARD</title>
+  </head>
+  <body>
+    <main id="dashboard-screen" class="app-screen">
+      <header class="dashboard-header">
+        <div class="dashboard-header_content">
+          <h1 class="dashboard-header_brand">HOSTIFY Staff</h1>
+          <button class="dashboard-header_logout-button">
+            <a href="../Menu/menu.html"> Logout </a>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Container -->
+      <div class="dashboard-container">
+        <h2 class="dashboard-title">Staff Dashboard</h2>
+        <nav class="dashboard-tabs">
+          <ul class="tabs-list">
+            <li class="tabs-list_item">
+              <button class="tab-button tab-button--active" data-tab="bookings">
+                Bookings <span class="tab-button_count">(0)</span>
+              </button>
+            </li>
+            <li class="tabs-list_item">
+              <button class="tab-button" data-tab="orders">
+                Orders <span class="tab-button_count">(0)</span>
+              </button>
+            </li>
+            <li class="tabs-list_item">
+              <button class="tab-button" data-tab="feedback">
+                Feedback <span class="tab-button_count">(0)</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="dashboard-content-area">
+          <div class="content-view bookings-cont" data-view="bookings">
+            <h3 class="content-view_title">All Bookings</h3>
+            <div class="content-view_empty-state">No bookings yet</div>
+          </div>
+          <div class="content-view order-cont" data-view="orders">
+            <h3 class="content-view_title">Current Orders</h3>
+            <div class="content-view_empty-state">No orders yet</div>
+          </div>
+          <div class="content-view feedback-cont" data-view="feedback">
+            <h3 class="content-view_title">Recent Feedback</h3>
+            <div class="content-view_empty-state">No feedback yet</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./staffDashboard.js"></script>
+  </body>
+</html>

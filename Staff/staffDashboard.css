@@ -1,0 +1,178 @@
+/* --- 1. GLOBAL BASE STYLES --- */
+:root {
+  --color-tobacco-dark: #3e312f;
+  --color-milk-light: #f9fafb;
+  --color-teal-accent: #06b6d4;
+  --color-text-dark: #1f2937;
+  --color-text-light: #e5e7eb;
+  --color-orange-brand: #f59e0b;
+  --color-orange-dark: #d97706;
+  --color-light-bg: #fef3c7;
+  --color-login-background: #fffbf5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom right, #1f2937, #111827);
+}
+
+/* --- 2. SCREEN MANAGEMENT --- */
+.app-screen {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* --- 4. DASHBOARD STYLES --- */
+
+.dashboard-header {
+  background-color: #1f2937;
+  opacity: 0.95;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header_brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+.dashboard-header_logout-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dashboard-header_logout-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.dashboard-header_logout-button:hover {
+  background-color: #f59e0b;
+  color: var(--color-tobacco-dark);
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f59e0b;
+  margin-bottom: 20px;
+}
+
+/* Tab Navigation */
+.dashboard-tabs {
+  margin-bottom: 30px;
+}
+
+.tabs-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 8px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s, border-bottom-color 0.2s;
+  color: #f4f4f4;
+  opacity: 0.8;
+}
+
+.tab-button--active {
+  color: #f4f4f4;
+  opacity: 1;
+  border-bottom-color: #f59e0b;
+  font-weight: 600;
+}
+
+.tab-button_count {
+  color: inherit;
+  font-weight: 400;
+}
+
+/* Dynamic Content Area */
+.dashboard-content-area {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+}
+
+.feedback-cont,
+.order-cont {
+  display: none;
+}
+
+.content-view_title {
+  font-size: 1.5rem;
+  color: #f59e0b;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 15px;
+}
+
+.content-view_empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: #9ca3af;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 767px) {
+  .login-card {
+    padding: 15px 20px;
+  }
+
+  .dashboard-header_content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tabs-list {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+    text-align: left;
+  }
+}
