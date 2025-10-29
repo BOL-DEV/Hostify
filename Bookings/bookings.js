@@ -18,6 +18,18 @@ bookingForm.addEventListener("submit", (e) => {
     guests: guests.value,
   };
 
+  // Get existing bookings or initialize an empty array
+  const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  // Add the new booking
+  existingBookings.push(bookingDetails);
+
+  localStorage.setItem("bookings", JSON.stringify(existingBookings));
+
+  alert("Booking successful! ✅");
+
+  bookingForm.reset();
+
   console.log("submitted");
   console.log("submitted booking:", bookingDetails);
 });

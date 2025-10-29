@@ -58,6 +58,7 @@
   font-size: 15px;
   outline: none;
   background-color: #1f2937;
+  color: white;
 }
 
 input:focus {

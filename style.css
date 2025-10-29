@@ -193,6 +193,12 @@ nav {
   color: var(--text);
 }
 
+@media (max-width: 1300px) {
+  nav {
+    gap: 20rem;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   nav {

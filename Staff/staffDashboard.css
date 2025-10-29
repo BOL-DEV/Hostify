@@ -161,19 +161,48 @@ body {
   font-size: 1.1rem;
 }
 
+.data-card {
+  background: #1f2937;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+  width: fit-content;
+}
+
+.data-card span {
+  font-weight: 600;
+  color: #f59e0b;
+}
+
+.data-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.data-card-rating {
+  color: #f59e0b;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.data-card-comment {
+  color: #e5e7eb;
+  margin: 0.3rem 0;
+}
+
+.data-card-date {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
 /* RESPONSIVENESS */
 @media (max-width: 767px) {
   .login-card {
     padding: 15px 20px;
-  }
-
-  .dashboard-header_content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .tabs-list {
-    flex-direction: column;
   }
 
   .tab-button {

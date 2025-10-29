@@ -85,7 +85,7 @@ const displayMenu = (item) =>
       <p>${item.title}</p>
       <h5>${item.type}</h5>
       <h4>${item.amount}</h4>
-      <button class="add-to-cart" data-name="${item.name}">Add to cart</button>
+      <button class="add-to-cart" data-name="${item.name}">Place your order</button>
     </div>
   `);
 
@@ -281,8 +281,14 @@ function openCheckout() {
       });
 
       if (res.ok) {
+        // ✅ Save payload to localStorage
+        let orders = JSON.parse(localStorage.getItem("orders")) || [];
+        orders.push(payload);
+        localStorage.setItem("orders", JSON.stringify(orders));
+
         alert("Order placed successfully ✅");
         console.log("✅ Sent to backend:", payload);
+
         modal.classList.remove("show");
         cart = [];
         updateCart();
