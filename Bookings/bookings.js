@@ -33,3 +33,19 @@ bookingForm.addEventListener("submit", (e) => {
   console.log("submitted");
   console.log("submitted booking:", bookingDetails);
 });
+
+// THEME TOGGLE
+const bookingThemeToggle = document.getElementById("themeToggle");
+const container = document.querySelector(".booking-container");
+
+if (localStorage.getItem("theme") === "light") {
+  container.classList.add("light-mode");
+  bookingThemeToggle.textContent = "🔆";
+}
+
+bookingThemeToggle.addEventListener("click", () => {
+  container.classList.toggle("light-mode");
+  const isLight = container.classList.contains("light-mode");
+  bookingThemeToggle.textContent = isLight ? "🔆" : "🌙";
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+});

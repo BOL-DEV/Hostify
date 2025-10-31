@@ -280,6 +280,36 @@ body {
   outline-offset: 2px;
 }
 
+body.light-mode {
+  background-color: #fffdf1;
+  color: #101828;
+}
+
+body.light-mode .login-card {
+  background-color: #ffffff;
+  color: #101828;
+  border: 1px solid #ddd;
+}
+body.light-mode .app-screen {
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+body.light-mode .login-card_brand,
+body.light-mode .login-card_title,
+body.light-mode .login-card_subtitle,
+body.light-mode .form-group_label,
+body.light-mode .form-group_hint {
+  color: #555;
+}
+
+body.light-mode .login-form_button {
+  color: black;
+}
+
+body.light-mode .footer_link {
+  color: var(--color-orange-brand);
+}
+
 /* RESPONSIVENESS */
 @media (max-width: 767px) {
   .login-card {

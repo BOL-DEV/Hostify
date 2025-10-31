@@ -376,3 +376,98 @@
   flex-direction: column;
   gap: 0.7rem;
 }
+
+/* === LIGHT MODE === */
+body.light-mode {
+  background-color: #fffdf1;
+  color: #0e0e0e;
+}
+
+/* Light mode nav */
+body.light-mode #mainNav,
+body.light-mode #mainNav * {
+  background: #ffffff !important; /* force white */
+  color: #101828 !important; /* force text color */
+}
+
+/* Links and buttons specifically */
+body.light-mode #mainNav .menu a,
+body.light-mode #mainNav .logo-text a,
+body.light-mode #mainNav .mobile-toggle,
+body.light-mode #mainNav .theme-btn {
+  color: #101828 !important;
+}
+
+body.light-mode .theme-btn,
+body.light-mode .mobile-toggle {
+  color: #101828; /* toggle and hamburger color */
+}
+
+/* Menu container */
+body.light-mode .menu_container {
+  background: #ffffff !important; /* page background */
+  color: #101828;
+}
+
+body.light-mode .menu_container .menu-header-text h1 {
+  font-size: 3rem;
+}
+
+body.light-mode .menu_container .menu-header-text p {
+  color: #101828;
+  /* font-size: 3rem; */
+}
+
+/* Menu cards */
+body.light-mode .menu_card {
+  background-color: #ffffff; /* card background */
+  color: #101828;
+  border: 1px solid #ddd;
+}
+body.light-mode .menu_card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .menu_card h4,
+body.light-mode .menu_card h5 {
+  color: #4b352a; /* brand accent */
+}
+
+/* Menu filter buttons */
+body.light-mode .menu_filter button.active {
+  background-color: #4b352a;
+  color: white;
+}
+body.light-mode .menu_filter button {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Cart button */
+body.light-mode .cart-btn {
+  background-color: #4b352a;
+  color: black;
+}
+
+/* Cart sidebar */
+
+body.light-mode .add-to-cart {
+  background-color: #4b352a;
+  color: white;
+}
+
+body.light-mode .cart-sidebar {
+  background-color: #ffffff;
+  color: #101828;
+  border-left: 1px solid #ddd;
+}
+
+/* Checkout modal */
+body.light-mode .checkout-modal .modal-box {
+  background-color: #ffffff;
+  color: #101828;
+}
+
+body.light-mode .cart-sidebar .close-cart {
+  color: black;
+}

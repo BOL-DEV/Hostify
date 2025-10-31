@@ -210,3 +210,53 @@ body {
     text-align: left;
   }
 }
+
+body.light-mode .dashboard-header {
+  background-color: #4b352a;
+  color: white;
+}
+
+body.light-mode .dashboard-header a {
+  color: white;
+}
+
+body.light-mode .dashboard-container {
+  background-color: #fff;
+}
+
+body.light-mode .data-card {
+  background: transparent;
+  color: #111827;
+}
+
+body.light-mode .data-card .data-card-comment {
+  /* background: transparent; */
+  color: #111827;
+}
+
+body.light-mode .tab-button {
+  background-color: #f7f7f7;
+  color: #222;
+}
+body.light-mode {
+  background-color: #fffdf1;
+  color: #101828;
+}
+body.light-mode .dashboard-content-area {
+  background-color: #fff;
+}
+body.light-mode .app-screen {
+  background-color: #fff;
+}
+
+.theme-btn {
+  /* position: fixed;
+  top: 15px;
+  right: 20px; */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: color 0.3s;
+}
