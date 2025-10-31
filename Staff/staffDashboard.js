@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="data-card-comment">${
               f.comment || "No comment provided"
             }</p>
-            <small class="data-card-date">${f.timestamp}</small>
+            <small class="data-card-date">${f.date}</small>
           </div>`
           )
           .join("")
