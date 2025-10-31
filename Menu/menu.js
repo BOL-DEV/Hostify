@@ -25,7 +25,8 @@ const menu = [
     title: "Soft amala with rich ewedu and assorted meat",
     type: "Food",
     amount: "₦2,800",
-    image: "https://allnigerianfoods.com/wp-content/uploads/yoruba-foods1.jpg",
+    image:
+      "https://www.thepointersnewsonline.com/wp-content/uploads/2025/06/Amala-And-Ewedu.jpeg",
   },
   {
     name: "Pounded Yam & Egusi Soup",
@@ -74,6 +75,95 @@ const menu = [
     amount: "₦1,000",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy88j7TIq-pqYTmy5l3JkY2rHu6Hj1vUBMmQ&s",
+  },
+  {
+    name: "Afang Soup with Fufu",
+    title: "Made with waterleaf, afang leaves, and meat/fish",
+    type: "Food",
+    amount: "₦9,000",
+    image:
+      "https://cdn.guardian.ng/wp-content/uploads/2018/09/Afang-Soup.-Photo-Mobizoneng-e1537365644632.jpg",
+  },
+  {
+    name: "Nsala (White Soup)",
+    title: "Spicy, peppery, no-palm-oil soup made with catfish",
+    type: "Food",
+    amount: "₦9,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ13Zxp0QzXMAPAi2yeOx23ED9JLmizE_xxrA&s",
+  },
+  {
+    name: "Tuwo Shinkafa & Miyan Kuka",
+    title: "Mashed rice with baobab leaf soup",
+    type: "Food",
+    amount: "₦9,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsDOtCTLxsRPQMZubughxFPyGlQtFXnX1RHA&s",
+  },
+  {
+    name: "Edikang Ikong Soup",
+    title:
+      "Heavy vegetable soup loaded with pumpkin leaves, waterleaf, and meats",
+    type: "Food",
+    amount: "₦9,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRll7xelLEUkbYu-T41kWuI55mWyAmjkZ7Bvw&s",
+  },
+  {
+    name: "Espresso",
+    title: "Freshly brewed strong coffee",
+    type: "Drink",
+    amount: "₦5,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrjyHlkViXf1t9FlpAnmlozT9DZSvPbFi-Lg&s",
+  },
+  {
+    name: "Cappuccino",
+    title: "Espresso with steamed milk and foam",
+    type: "Drink",
+    amount: "₦7,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDoJyO5UOEgIa_ST-OBKYSkilsSpcCjXMd7Q&s",
+  },
+  {
+    name: "Mojito",
+    title: "Classic mint and lime cocktail",
+    type: "Drink",
+    amount: "₦10,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8mOBbQTa4p8g_-9yFPkcPA_YRIvdn-cqScQ&s",
+  },
+  {
+    name: "Margherita Pizza",
+    title: "Classi pizza with tomato sauce, mozzarella and basil",
+    type: "Food",
+    amount: "₦9,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1bdKKaTySsc4t8ahzTXQIG87Ls_J8ph907w&s",
+  },
+  {
+    name: "Pepperoni Pizza",
+    title: "Spicy pepperoni with mozzarella $ tomato sauce",
+    type: "Food",
+    amount: "₦19,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX8I0UzPdBT0GcrdIz-6NBGNwkHnYwN2ekWw&s",
+  },
+  {
+    name: "Spaghetti Carbonara",
+    title: "Creamy pasta with pancetter, egg and parmesan",
+    type: "Food",
+    amount: "₦29,000",
+    image:
+      "https://fibercreme.com/wp-content/uploads/2025/04/WhatsApp-Image-2025-04-29-at-17.04.02-2-scaled-e1746504545588.webp",
+  },
+  {
+    name: "Fettuccine Alfredo",
+    title: "Butter, cream and parmesan sauce",
+    type: "Food",
+    amount: "₦29,000",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkgyK89-qr0JQcVOR726RSx2KVTvt4E0C1uA&s",
   },
 ];
 
@@ -317,16 +407,16 @@ window.addEventListener("click", (e) => {
 });
 
 // THEME TOGGLE
-const themeToggle = document.getElementById("themeToggle");
+const menuThemeToggle = document.getElementById("themeToggle");
 
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light-mode");
-  themeToggle.textContent = "🔆";
+  menuThemeToggle.textContent = "🔆";
 }
 
-themeToggle.addEventListener("click", () => {
+menuThemeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
   const isLight = document.body.classList.contains("light-mode");
-  themeToggle.textContent = isLight ? "🔆" : "🌙";
+  menuThemeToggle.textContent = isLight ? "🔆" : "🌙";
   localStorage.setItem("theme", isLight ? "light" : "dark");
 });

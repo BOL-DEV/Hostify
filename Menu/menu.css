@@ -171,9 +171,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-@media ((max-width: 600px)) {
+@media ((max-width: 900px)) {
   .cart-btn {
-    top: 10px;
+    top: 70px;
     right: 55px;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
