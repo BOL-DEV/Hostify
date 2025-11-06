@@ -405,18 +405,3 @@ window.addEventListener("click", (e) => {
     modal.classList.remove("show");
   }
 });
-
-// THEME TOGGLE
-const menuThemeToggle = document.getElementById("themeToggle");
-
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-mode");
-  menuThemeToggle.textContent = "🔆";
-}
-
-menuThemeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-  const isLight = document.body.classList.contains("light-mode");
-  menuThemeToggle.textContent = isLight ? "🔆" : "🌙";
-  localStorage.setItem("theme", isLight ? "light" : "dark");
-});

@@ -74,20 +74,3 @@ const renderFeedbacks = () => {
 };
 
 document.addEventListener("DOMContentLoaded", renderFeedbacks);
-
-// THEME TOGGLE
-const feedbackThemeToggle = document.getElementById("themeToggle");
-
-if (feedbackThemeToggle) {
-  if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light-mode");
-    feedbackThemeToggle.textContent = "🔆";
-  }
-
-  feedbackThemeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-    const isLight = document.body.classList.contains("light-mode");
-    feedbackThemeToggle.textContent = isLight ? "🔆" : "🌙";
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-  });
-}

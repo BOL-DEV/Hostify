@@ -119,24 +119,5 @@
     </div>
     <script src="../app.js"></script>
     <script src="./bookings.js"></script>
-    <script>
-      const user = JSON.parse(localStorage.getItem("loggedInUser"));
-      // const welcome = document.getElementById("welcome");
-
-      // If no user found → redirect to login page
-      if (!user) {
-        window.location.href = "../Login/login.html";
-      } else {
-        alert(`Welcome back, ${user.name}!`);
-        // welcome.textContent = `Welcome, ${user.name}`;
-      }
-
-      // Logout logic
-      // const logoutBtn = document.getElementById("logoutBtn");
-      // logoutBtn.addEventListener("click", () => {
-      //   localStorage.removeItem("loggedInUser");
-      //   window.location.href = "login.html";
-      // });
-    </script>
   </body>
 </html>

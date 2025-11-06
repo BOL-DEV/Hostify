@@ -6,6 +6,15 @@ const time = document.getElementById("time");
 const guests = document.getElementById("guests");
 const bookingForm = document.getElementById("bookingForm");
 
+const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+// If no user found → redirect to login page
+if (!user) {
+  window.location.href = "../Login/login.html";
+} else {
+  alert(`Welcome back, ${user.name}!`);
+}
+
 bookingForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -17,6 +26,8 @@ bookingForm.addEventListener("submit", (e) => {
     time: time.value,
     guests: guests.value,
   };
+
+  //hostify-app.vercel.app
 
   // Get existing bookings or initialize an empty array
   const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];

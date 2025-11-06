@@ -17,21 +17,8 @@ submitBtn.addEventListener("click", (e) => {
   }
 });
 
-
 // === LIGHT MODE TOGGLE ===
 const body = document.body;
-const themeToggle = document.createElement("button");
-themeToggle.id = "themeToggle";
-themeToggle.className = "theme-btn";
-themeToggle.textContent = "🌙";
-themeToggle.style.position = "fixed";
-themeToggle.style.top = "15px";
-themeToggle.style.right = "20px";
-themeToggle.style.background = "none";
-themeToggle.style.border = "none";
-themeToggle.style.fontSize = "1.5rem";
-themeToggle.style.cursor = "pointer";
-document.body.appendChild(themeToggle);
 
 // Load saved theme
 if (localStorage.getItem("theme") === "light") {
